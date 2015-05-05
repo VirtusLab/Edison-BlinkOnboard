@@ -42,7 +42,7 @@ class Blinky(ledPin: Int) extends Actor {
     initialDelay = 0.millis,
     interval = 400.millis,
     receiver = led,
-    message = Switch
+    message = Clock
   )
 }
 

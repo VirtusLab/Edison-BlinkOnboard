@@ -14,12 +14,12 @@ class Led(ledPin: Int) extends Actor {
   gpio.dir(DIR_OUT)
 
   def ledOff: Receive = {
-    case Switch => turnOn
+    case Clock => turnOn
     case Off    =>
   }
 
   def ledOn: Receive = {
-    case Switch => turnOff
+    case Clock => turnOff
     case Off    => turnOff
   }
 
@@ -42,7 +42,7 @@ object Led {
   def props(ledPin: Int) = Props(new Led(ledPin))
 
   object Protocol {
-    case object Switch
+    case object Clock
     case object Off
   }
 }
